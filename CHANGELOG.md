@@ -1,5 +1,9 @@
 # Changelog
 
+##1.0.1
+
+* Added setup guide.
+
 ## 1.0.0
 
 * **Initial Production Release**

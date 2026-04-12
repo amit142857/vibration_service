@@ -53,6 +53,8 @@ Add the vibration permission to your `AndroidManifest.xml` file located in `andr
 ```xml
 <uses-permission android:name="android.permission.VIBRATE"/>
 
+
+
 🍎 iOS
 
 Physical Device Required: Please note that haptic feedback and vibrations do not work on the iOS Simulator. You must test the vibration functionality on a physical iPhone.
