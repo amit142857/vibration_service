@@ -47,16 +47,15 @@ await VibrationService.custom([30, 50, 80, 50]);
 
 To use this vibration package, you must follow these platform-specific requirements:
 
+🍎 iOS
+
+Physical Device Required: Please note that haptic feedback and vibrations do not work on the iOS Simulator. You must test the vibration functionality on a physical iPhone.
+
+No additional Info.plist permissions are required for standard vibrations.
+
 #### 🤖 Android
 Add the vibration permission to your `AndroidManifest.xml` file located in `android/app/src/main/AndroidManifest.xml`:
 
 ```xml
 <uses-permission android:name="android.permission.VIBRATE"/>
 
-
-
-🍎 iOS
-
-Physical Device Required: Please note that haptic feedback and vibrations do not work on the iOS Simulator. You must test the vibration functionality on a physical iPhone.
-
-No additional Info.plist permissions are required for standard vibrations.
