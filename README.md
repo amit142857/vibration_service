@@ -43,6 +43,8 @@ await VibrationService.custom([30, 50, 80, 50]);
   package to query settings or platform capabilities if you need that.
 
 
-Android: Remind users to add <uses-permission android:name="android.permission.VIBRATE"/> to their AndroidManifest.xml.
+## Important
+- Android: add
+ <uses-permission android:name="android.permission.VIBRATE"/> to their AndroidManifest.xml.
 
-iOS: Mention that vibration only works on physical devices, not simulators.
+- iOS: Mention that vibration only works on physical devices, not simulators.
