@@ -42,14 +42,7 @@ await VibrationService.custom([30, 50, 80, 50]);
 - `_canVibrate` currently always returns `true`; you can fork or extend the
   package to query settings or platform capabilities if you need that.
 
-## Publishing checklist
 
-Before `dart pub publish`:
+Android: Remind users to add <uses-permission android:name="android.permission.VIBRATE"/> to their AndroidManifest.xml.
 
-1. Set **real** `homepage` / `repository` URLs in `pubspec.yaml` (or remove
-   placeholders and point to your actual repo).
-2. Confirm `LICENSE` matches how you want to license the package.
-3. Add an verified publisher on [pub.dev](https://pub.dev/).
-
-See [publishing packages](https://dart.dev/tools/pub/publishing).
-# vibration_service
+iOS: Mention that vibration only works on physical devices, not simulators.
