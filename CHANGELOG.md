@@ -1,4 +1,9 @@
 # Changelog
+
+## 1.0.4
+
+* added comments
+
 ## 1.0.3
 
 * added library to increase pub score

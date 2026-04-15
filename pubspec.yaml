@@ -2,9 +2,8 @@ name: vibration_service
 description: >
   Lightweight haptic helpers for Flutter using HapticFeedback—success, failure,
   refresh, warning, selection, and custom duration patterns.
-version: 1.0.3
-homepage: https://github.com/amityadav/vibration_service
-repository: https://github.com/amityadav/vibration_service
+version: 1.0.4
+repository: https://github.com/amit142857/vibration_service
 
 environment:
   sdk: ^3.5.0

@@ -1,5 +1,6 @@
 // ignore_for_file: empty_catches
 
+/// A library providing consistent haptic feedback helpers.
 // ignore: unnecessary_library_name
 library vibration_service;
 
@@ -10,6 +11,10 @@ import 'package:flutter/services.dart';
 /// Call static methods such as [VibrationService.failure] from UI code after
 /// user actions (success, error, pull-to-refresh, etc.).
 class VibrationService {
+  /// Private constructor to prevent instantiation.
+  VibrationService._();
+
+  /// Triggers a light impact to indicate a successful action.
   static Future<void> success() async {
     try {
       if (await _canVibrate()) {
@@ -18,38 +23,42 @@ class VibrationService {
     } catch (e) {}
   }
 
+  /// Triggers a double medium impact to indicate a failed action.
   static Future<void> failure() async {
     try {
       if (await _canVibrate()) {
         for (int i = 0; i < 2; i++) {
           HapticFeedback.mediumImpact();
-          if (i < 2) await Future.delayed(Duration(milliseconds: 80));
+          if (i < 2) await Future.delayed(const Duration(milliseconds: 80));
         }
       }
     } catch (e) {}
   }
 
+  /// Triggers a medium double-impact pattern suitable for pull-to-refresh.
   static Future<void> onRefresh() async {
     try {
       if (await _canVibrate()) {
         for (int i = 0; i < 2; i++) {
           HapticFeedback.mediumImpact();
-          if (i < 2) await Future.delayed(Duration(milliseconds: 80));
+          if (i < 2) await Future.delayed(const Duration(milliseconds: 80));
         }
       }
     } catch (e) {}
   }
 
+  /// Triggers a warning pattern with a significant pause between impacts.
   static Future<void> warning() async {
     try {
       if (await _canVibrate()) {
         HapticFeedback.mediumImpact();
-        await Future.delayed(Duration(milliseconds: 150));
+        await Future.delayed(const Duration(milliseconds: 150));
         HapticFeedback.mediumImpact();
       }
     } catch (e) {}
   }
 
+  /// Triggers a light impact suitable for scrolling feedback.
   static Future<void> scroll() async {
     try {
       if (await _canVibrate()) {
@@ -58,6 +67,7 @@ class VibrationService {
     } catch (e) {}
   }
 
+  /// Triggers a standard selection click haptic.
   static Future<void> selection() async {
     try {
       if (await _canVibrate()) {
@@ -66,6 +76,7 @@ class VibrationService {
     } catch (e) {}
   }
 
+  /// Triggers a heavy impact for significant UI actions.
   static Future<void> heavy() async {
     try {
       if (await _canVibrate()) {
@@ -74,6 +85,7 @@ class VibrationService {
     } catch (e) {}
   }
 
+  /// Triggers a light impact for subtle UI feedback.
   static Future<void> light() async {
     try {
       if (await _canVibrate()) {
@@ -82,6 +94,8 @@ class VibrationService {
     } catch (e) {}
   }
 
+  /// Triggers a custom vibration sequence.
+  ///
   /// [pattern] encodes alternating vibrate durations (even indices, ms) and
   /// pauses (odd indices, ms). Even-index values map to light / medium /
   /// heavy impact by duration thresholds.
@@ -109,6 +123,7 @@ class VibrationService {
     } catch (e) {}
   }
 
+  /// Internal check to determine if the device supports haptics.
   static Future<bool> _canVibrate() async {
     return true;
   }
