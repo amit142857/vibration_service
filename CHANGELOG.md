@@ -1,6 +1,9 @@
 # Changelog
+## 1.0.3
 
-##1.0.2
+* added library to increase pub score
+
+## 1.0.2
 
 * Added setup guide.
 
