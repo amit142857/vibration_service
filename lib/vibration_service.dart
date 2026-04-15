@@ -1,5 +1,8 @@
 // ignore_for_file: empty_catches
 
+// ignore: unnecessary_library_name
+library vibration_service;
+
 import 'package:flutter/services.dart';
 
 /// Consistent haptic feedback helpers built on [HapticFeedback].
