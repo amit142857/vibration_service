@@ -1,4 +1,7 @@
 # Changelog
+## 1.0.5
+
+* repo url update
 
 ## 1.0.4
 
